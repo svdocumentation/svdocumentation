@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - SV Documentation</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+  <header>
+    <div class="logo">SV Documentation</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="info.html">Info</a></li>
+      <li><a class="active" href="contact.html">Contact</a></li>
+    </ul>
+  </header>
+
+  <section class="contact-section">
+    <h2>Contact Us</h2>
+    <p>Phone: <a href="tel:7993442841">7993442841</a></p>
+    <p>Email: <a href="mailto:bandelashiva900@gmail.com">bandelashiva900@gmail.com</a></p>
+
+    <form name="contactForm" onsubmit="return submitForm(event)">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+      <p id="form-status" style="text-align:center;color:green;"></p>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SV Documentation and Services. All rights reserved.</p>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+  <script src="scripts/effects.js"></script>
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+      document.getElementById('form-status').innerText = "Thanks! Your message has been sent.";
+      event.target.reset();
+      return false;
+    }
+  </script>
+</body>
+</html>
